@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PropKat | Property Management Made Easy</title>
+    <meta name="description" content="Propkat.com property management system for landlords and small property managers. Track tenants, rent, maintenance, and documents." />
+
+    <!-- Tailwind (CDN for placeholder) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: nicer default font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+            colors: {
+              brandBlue: "#1F5EFF",
+              brandOrange: "#F97316",
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body class="font-sans text-slate-900 bg-white">
+    <!-- Top bar -->
+    <header class="border-b border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3">
+          <img
+            src="./assets/propkat2.png"
+            alt="PropKat logo"
+            class="h-10 w-auto"
+          />
+          <span class="sr-only">PropKat</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a class="hover:text-brandBlue" href="#features">Features</a>
+          <a class="hover:text-brandBlue" href="#how-it-works">How it works</a>
+          <a class="hover:text-brandBlue" href="#pricing">Pricing</a>
+          <a class="hover:text-brandBlue" href="#contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex items-center justify-center rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+          >
+            Request demo
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+            aria-label="Sign in (placeholder)"
+            title="Placeholder"
+          >
+            Sign in
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-6xl px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="text-sm font-semibold text-brandBlue">
+              Propkat.com property management system
+            </p>
+
+            <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
+              Property management made simple for small teams
+            </h1>
+
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              Track tenants, rent, maintenance, and documents in one place.
+              Built for landlords and small property managers who want control without spreadsheets.
+            </p>
+
+            <div class="mt-7 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-xl bg-brandBlue px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+              >
+                Request a demo
+              </a>
+              <a
+                href="#features"
+                class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold hover:bg-slate-50"
+              >
+                See features
+              </a>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 p-4">
+                <p class="font-semibold">Rent tracking</p>
+                <p class="mt-1 text-slate-600">Status, reminders, receipts</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 p-4">
+                <p class="font-semibold">Maintenance</p>
+                <p class="mt-1 text-slate-600">Requests, jobs, updates</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero card -->
+          <div class="relative">
+            <div class="rounded-3xl border border-slate-200 bg-white shadow-sm p-6">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-semibold">
+                  PK
+                </div>
+                <div>
+                  <p class="font-semibold">PropKat Dashboard</p>
+                  <p class="text-sm text-slate-600">Placeholder preview</p>
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200">
+                  <p class="text-xs font-semibold text-slate-500">Units</p>
+                  <p class="mt-2 text-2xl font-semibold">42</p>
+                  <p class="mt-1 text-xs text-slate-600">Occupied: 39</p>
+                </div>
+
+                <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200">
+                  <p class="text-xs font-semibold text-slate-500">Rent due</p>
+                  <p class="mt-2 text-2xl font-semibold">£12,600</p>
+                  <p class="mt-1 text-xs text-slate-600">This month</p>
+                </div>
+
+                <div class="col-span-2 rounded-2xl bg-slate-50 p-4 border border-slate-200">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-semibold text-slate-500">Open maintenance</p>
+                    <span class="text-xs font-semibold text-brandOrange">7</span>
+                  </div>
+
+                  <ul class="mt-3 space-y-2 text-sm">
+                    <li class="flex items-center justify-between">
+                      <span class="text-slate-700">Leak in Unit 3B</span>
+                      <span class="text-xs rounded-full bg-white border border-slate-200 px-2 py-1 text-slate-600">Assigned</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <span class="text-slate-700">Boiler check — Flat 8</span>
+                      <span class="text-xs rounded-full bg-white border border-slate-200 px-2 py-1 text-slate-600">Scheduled</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                      <span class="text-slate-700">Fence repair</span>
+                      <span class="text-xs rounded-full bg-white border border-slate-200 px-2 py-1 text-slate-600">New</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="mt-6 text-xs text-slate-500">
+                This is a placeholder UI block. Swap in real screenshots later.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social proof / quick trust row -->
+      <section class="border-y border-slate-200 bg-slate-50">
+        <div class="mx-auto max-w-6xl px-4 py-10">
+          <div class="grid sm:grid-cols-3 gap-6 text-sm">
+            <div class="rounded-2xl bg-white border border-slate-200 p-5">
+              <p class="font-semibold">Tenant records</p>
+              <p class="mt-1 text-slate-600">Contacts, leases, notes, files</p>
+            </div>
+            <div class="rounded-2xl bg-white border border-slate-200 p-5">
+              <p class="font-semibold">Work tracking</p>
+              <p class="mt-1 text-slate-600">Requests → jobs → completion</p>
+            </div>
+            <div class="rounded-2xl bg-white border border-slate-200 p-5">
+              <p class="font-semibold">Audit trail</p>
+              <p class="mt-1 text-slate-600">Who changed what, and when</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="mx-auto max-w-6xl px-4 py-14 md:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight">Features</h2>
+          <p class="mt-3 text-slate-600">
+            The core tools most small property managers actually use day-to-day.
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Properties & units</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Unit list and status</li>
+              <li>• Move-in / move-out</li>
+              <li>• Documents per unit</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Rent & payments</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Rent schedules</li>
+              <li>• Payment status</li>
+              <li>• Receipts and history</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Maintenance</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Requests and triage</li>
+              <li>• Assign contractors</li>
+              <li>• Job updates</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Messaging</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Tenant contact log</li>
+              <li>• Templates</li>
+              <li>• Notes per case</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Files</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Lease storage</li>
+              <li>• Inspections</li>
+              <li>• Certificates</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Reporting</p>
+            <ul class="mt-3 text-sm text-slate-600 space-y-2">
+              <li>• Rent due list</li>
+              <li>• Maintenance backlog</li>
+              <li>• Export to CSV</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works" class="bg-slate-50 border-y border-slate-200">
+        <div class="mx-auto max-w-6xl px-4 py-14 md:py-18">
+          <h2 class="text-3xl font-semibold tracking-tight">How it works</h2>
+
+          <div class="mt-10 grid md:grid-cols-3 gap-6 text-sm">
+            <div class="rounded-3xl bg-white border border-slate-200 p-6">
+              <p class="text-xs font-semibold text-slate-500">STEP 1</p>
+              <p class="mt-2 font-semibold">Add properties</p>
+              <p class="mt-2 text-slate-600">Create buildings, units, and rent rules.</p>
+            </div>
+            <div class="rounded-3xl bg-white border border-slate-200 p-6">
+              <p class="text-xs font-semibold text-slate-500">STEP 2</p>
+              <p class="mt-2 font-semibold">Add tenants</p>
+              <p class="mt-2 text-slate-600">Store lease dates, contacts, and documents.</p>
+            </div>
+            <div class="rounded-3xl bg-white border border-slate-200 p-6">
+              <p class="text-xs font-semibold text-slate-500">STEP 3</p>
+              <p class="mt-2 font-semibold">Run operations</p>
+              <p class="mt-2 text-slate-600">Track rent, requests, and contractor work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing (placeholder) -->
+      <section id="pricing" class="mx-auto max-w-6xl px-4 py-14 md:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight">Pricing</h2>
+          <p class="mt-3 text-slate-600">
+            Placeholder pricing. Replace once you decide your tiers.
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Starter</p>
+            <p class="mt-2 text-3xl font-semibold">£19<span class="text-base font-medium text-slate-500">/month</span></p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>• Up to 10 units</li>
+              <li>• Rent tracking</li>
+              <li>• Maintenance log</li>
+            </ul>
+            <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+              Request demo
+            </a>
+          </div>
+
+          <div class="rounded-3xl border-2 border-brandBlue p-6">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold">Pro</p>
+              <span class="text-xs rounded-full bg-brandBlue/10 text-brandBlue px-3 py-1 font-semibold">Most common</span>
+            </div>
+            <p class="mt-2 text-3xl font-semibold">£49<span class="text-base font-medium text-slate-500">/month</span></p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>• Up to 50 units</li>
+              <li>• Document storage</li>
+              <li>• Basic reports</li>
+            </ul>
+            <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-brandBlue px-4 py-2 text-sm font-semibold text-white hover:opacity-95">
+              Request demo
+            </a>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 p-6">
+            <p class="font-semibold">Business</p>
+            <p class="mt-2 text-3xl font-semibold">£99<span class="text-base font-medium text-slate-500">/month</span></p>
+            <ul class="mt-4 text-sm text-slate-600 space-y-2">
+              <li>• 200+ units</li>
+              <li>• Roles and permissions</li>
+              <li>• Advanced reports</li>
+            </ul>
+            <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+              Request demo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-slate-50 border-t border-slate-200">
+        <div class="mx-auto max-w-6xl px-4 py-14 md:py-18 grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 class="text-3xl font-semibold tracking-tight">Contact</h2>
+            <p class="mt-3 text-slate-600">
+              Tell us what you manage and what you need. This form is a placeholder.
+            </p>
+
+            <div class="mt-8 space-y-3 text-sm">
+              <div class="rounded-2xl bg-white border border-slate-200 p-4">
+                <p class="font-semibold">Email</p>
+                <p class="mt-1 text-slate-600">hello@propkat.com (placeholder)</p>
+              </div>
+              <div class="rounded-2xl bg-white border border-slate-200 p-4">
+                <p class="font-semibold">Product</p>
+                <p class="mt-1 text-slate-600">Property management system for landlords and small teams.</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="rounded-3xl bg-white border border-slate-200 p-6">
+            <div class="grid gap-4">
+              <div>
+                <label class="text-sm font-semibold" for="name">Name</label>
+                <input id="name" type="text" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandBlue" placeholder="Your name" />
+              </div>
+
+              <div>
+                <label class="text-sm font-semibold" for="email">Email</label>
+                <input id="email" type="email" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandBlue" placeholder="you@example.com" />
+              </div>
+
+              <div>
+                <label class="text-sm font-semibold" for="units">Units managed</label>
+                <select id="units" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandBlue">
+                  <option>1–10</option>
+                  <option>11–50</option>
+                  <option>51–200</option>
+                  <option>200+</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="text-sm font-semibold" for="message">What do you need?</label>
+                <textarea id="message" rows="5" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brandBlue" placeholder="Rent tracking, maintenance, contractor workflow, reporting..."></textarea>
+              </div>
+
+              <button type="button" class="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800">
+                Send (placeholder)
+              </button>
+
+              <p class="text-xs text-slate-500">
+                Placeholder only. Wire this to your backend later.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-sm text-slate-600">
+        <p>© <span id="year"></span> PropKat. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-brandBlue">Privacy</a>
+          <a href="#" class="hover:text-brandBlue">Terms</a>
+          <a href="#contact" class="hover:text-brandBlue">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
